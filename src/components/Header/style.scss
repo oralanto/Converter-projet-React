@@ -1,0 +1,18 @@
+.header {
+  background-color: #bb5432;
+  color: #fff;
+  font-family: 'Spartan', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3em 2em;
+  margin: 1em;
+  &__title {
+    font-weight: 700;
+    font-size: 5em;
+  }
+  &__subtitle {
+    font-weight: 100;
+    font-size: 2em;
+  }
+}
