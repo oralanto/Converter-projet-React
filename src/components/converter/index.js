@@ -1,19 +1,19 @@
 import React from 'react';
 
 import Header from 'src/components/Header';
-import Country from 'src/components/Country';
-import Rate from 'src/components/Rate';
+import Currencies from 'src/components/Currencies';
+import Amount from 'src/components/Amount';
 
-import data from 'src/data/currencies.js';
+import data from 'src/data/currencies';
 import './style.scss';
 
 const Converter = () => (
   <div>
     <Header />
-    <Country
+    <Currencies
       names={data.names}
     />
-    <Rate
+    <Amount
       names={data.names}
       rates={data.rates}
     />

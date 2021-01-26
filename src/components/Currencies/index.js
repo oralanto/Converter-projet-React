@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
 
-const Country = ({ names }) => {
+const Currencies = ({ names }) => {
   const jsxNames = names.map((name) => {
     const li = <li className="list__item" key={name}>{name}</li>;
     return li;
@@ -15,8 +15,8 @@ const Country = ({ names }) => {
   );
 };
 
-Country.propTypes = {
-  names: PropTypes.arrayOf(PropTypes.shaoe({ name: PropTypes.string.isRequired })).isRequired,
+Currencies.propTypes = {
+  names: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string.isRequired })).isRequired,
 };
 
-export default Country;
+export default Currencies;
