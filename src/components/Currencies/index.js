@@ -5,7 +5,7 @@ import Currency from './Currency';
 
 const Currencies = ({ currencies }) => {
   const currenciesList = currencies.map((currency) => (
-    <Currency text={currency.name} />
+    <Currency key={currency.name} text={currency.name} />
   ));
   return (
     <div className="currencies">
