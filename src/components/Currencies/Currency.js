@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// const checkCurrency = (e) => {
-// console.log(e.target.innerText);
-// };
-
 const Currency = ({ text, onClick }) => <li value={text} onClick={onClick} className="currency">{text}</li>;
 
 Currency.propTypes = {
