@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './style.scss';
 import Currency from './Currency';
 
-const Currencies = ({ currencies }) => {
+import './style.scss';
+
+const Currencies = ({ currencies, onClick }) => {
   const currenciesList = currencies.map((currency) => (
-    <Currency key={currency.name} text={currency.name} />
+    <Currency onClick={onClick} key={currency.name} text={currency.name} />
   ));
   return (
     <div className="currencies">
@@ -19,6 +20,7 @@ Currencies.propTypes = {
   currencies: PropTypes.arrayOf(
     PropTypes.shape({ name: PropTypes.string.isRequired }),
   ).isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Currencies;

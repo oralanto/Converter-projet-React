@@ -1,16 +1,16 @@
-import React from 'react';
+import React/*, { useState }*/ from 'react';
 
 import Header from 'src/components/Header';
 import Currencies from 'src/components/Currencies';
 import Amount from 'src/components/Amount';
-import Toggler from 'src/components/Toggler';
+// import Toggler from 'src/components/Toggler';
 
 import currenciesData from 'src/data/currencies';
 import './style.scss';
 
 class Converter extends React.Component {
   state = {
-    open: false,
+    open: true,
     baseAmount: 1,
     currency: 'Swiss Franc',
   };
@@ -19,6 +19,12 @@ class Converter extends React.Component {
     const { open } = this.state;
     this.setState({
       open: !open,
+    });
+  }
+
+  handleClick = (e) => {
+    this.setState({
+      currency: this.state.currency = e.target.innerText,
     });
   }
 
@@ -36,8 +42,8 @@ class Converter extends React.Component {
     return (
       <div className="converter">
         <Header baseAmount={baseAmount} />
-        <Toggler onClick={this.toggle} />
-        {open && <Currencies currencies={currenciesData} />}
+        {/* <Toggler onClick={this.toggle} /> */}
+        {open && <Currencies onClick={(e) => this.handleClick(e)} currencies={currenciesData} />}
         <Amount value={convertedAmount} currency={currency} />
       </div>
     );
