@@ -10,8 +10,8 @@ const Amount = ({ value, currency }) => (
 );
 
 Amount.propTypes = {
-  value: PropTypes.string.isRequired,
-  currency: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+  currency: PropTypes.string.isRequired,
 };
 
 export default Amount;

@@ -1,5 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Currency = () => <li className="currency">United State Dollar</li>;
+const Currency = ({ text }) => <li className="currency">{text}</li>;
+
+Currency.propTypes = { text: PropTypes.string.isRequired };
 
 export default Currency;
