@@ -1,22 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import './style.scss';
+import Currency from './Currency';
 
-const Currencies = ({ names }) => {
-  const jsxNames = names.map((name) => {
-    const li = <li className="list__item" key={name}>{name}</li>;
-    return li;
-  });
-  return (
-    <ul className="list">
-      <li className="list__title">Currencies</li>
-      {jsxNames}
+const Currencies = () => (
+  <div className="currencies">
+    <p className="currencies__title">Currencies</p>
+    <ul className="currencies__list">
+      <Currency />
+      <Currency />
+      <Currency />
+      <Currency />
+      <Currency />
+      <Currency />
+      <Currency />
+      <Currency />
+      <Currency />
+      <Currency />
+      <Currency />
+      <Currency />
     </ul>
-  );
-};
+  </div>
+);
 
-Currencies.propTypes = {
-  names: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string.isRequired })).isRequired,
-};
+// Currencies.propTypes = {
+//   names: PropTypes.arrayOf(
+//     PropTypes.shape({ name: PropTypes.string.isRequired })).isRequired,
+// };
 
 export default Currencies;
