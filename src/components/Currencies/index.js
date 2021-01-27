@@ -10,7 +10,12 @@ const Currencies = ({ currencies, onClick }) => {
   ));
   return (
     <div className="currencies">
-      <p className="currencies__title">Currencies</p>
+      {/* <p className="currencies__title">Currencies</p> */}
+      <input
+        type="text"
+        placeholder="Rechercher une devise"
+        className="currencies__input"
+      />
       <ul className="currencies__list">{currenciesList}</ul>
     </div>
   );

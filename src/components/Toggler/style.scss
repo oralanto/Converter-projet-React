@@ -1,9 +1,0 @@
-@use 'src/styles/vars' as v;
-
-button {
-  background-color: v.$color-primary;
-  width: 100%;
-  color: v.$color-light;
-  font-size: v.$text-normal;
-  padding: v.$gutter;
-}
