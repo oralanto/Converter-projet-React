@@ -14,6 +14,12 @@ class Converter extends React.Component {
     search: '',
   };
 
+  setBaseAmount = (value) => {
+    this.setState({
+      baseAmount: value,
+    });
+  }
+
   setCurrency = (e) => {
     this.setState({
       currency: this.state.currency = e.target.textContent,
@@ -56,7 +62,10 @@ class Converter extends React.Component {
     const filteredCurrencies = this.getCurrencies();
     return (
       <div className="converter">
-        <Header baseAmount={baseAmount} />
+        <Header
+          inputValue={baseAmount}
+          setBaseAmountValue={this.setBaseAmount}
+        />
         <Currencies
           onClick={(e) => this.setCurrency(e)}
           currencies={filteredCurrencies}

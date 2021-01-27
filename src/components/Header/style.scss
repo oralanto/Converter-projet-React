@@ -12,5 +12,9 @@
   }
   &__base-amount {
     font-weight: v.$text-light;
+    text-align: right;
+    color: v.$color-light;
+    background-color: v.$color-primary;
+    border: none;
   }
 }
