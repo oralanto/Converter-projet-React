@@ -11,12 +11,35 @@ class Converter extends React.Component {
   state = {
     baseAmount: 1,
     currency: 'Swiss Franc',
+    search: '',
   };
 
   setCurrency = (e) => {
     this.setState({
       currency: this.state.currency = e.target.textContent,
     });
+  }
+
+  setSearch = (value) => {
+    this.setState({
+      search: value,
+    });
+  }
+
+  getCurrencies = () => {
+    let filteredCurrencies = currenciesData;
+    const { search } = this.state;
+    if (search !== '') {
+      filteredCurrencies = currenciesData.filter((currency) => {
+        const loweredCurrencies = currency.name.toLowerCase();
+        const loweredSearch = search.toLocaleLowerCase();
+
+        const isIncludeInSearch = loweredCurrencies.includes(loweredSearch);
+        return isIncludeInSearch;
+      });
+    }
+
+    return filteredCurrencies;
   }
 
   makeConversion = () => {
@@ -28,12 +51,18 @@ class Converter extends React.Component {
   };
 
   render() {
-    const { baseAmount, currency } = this.state;
+    const { baseAmount, currency, search } = this.state;
     const convertedAmount = this.makeConversion();
+    const filteredCurrencies = this.getCurrencies();
     return (
       <div className="converter">
         <Header baseAmount={baseAmount} />
-        <Currencies onClick={(e) => this.setCurrency(e)} currencies={currenciesData} />
+        <Currencies
+          onClick={(e) => this.setCurrency(e)}
+          currencies={filteredCurrencies}
+          inputValue={search}
+          setSearchValue={this.setSearch}
+        />
         <Amount value={convertedAmount} currency={currency} />
       </div>
     );
