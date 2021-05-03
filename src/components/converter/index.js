@@ -14,6 +14,13 @@ class Converter extends React.Component {
     search: '',
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    const { currency } = this.state;
+    if (currency !== prevState.currency) {
+      this.changePageTitle();
+    }
+  }
+
   setBaseAmount = (value) => {
     this.setState({
       baseAmount: value,
