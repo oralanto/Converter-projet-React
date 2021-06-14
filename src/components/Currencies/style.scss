@@ -14,6 +14,7 @@
     &::placeholder {
       color: v.$color-alt;
       font-size: v.$text-normal;
+      font-style: italic;
     }
   }
 }

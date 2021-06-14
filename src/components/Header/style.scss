@@ -5,19 +5,24 @@
   color: v.$color-light;
   text-align: center;
   padding: v.$gutter * 2;
+  display: flex;
+  flex-direction: column;
   &__title {
     font-size: 2em;
     font-weight: v.$text-bold;
     margin-bottom: v.$gutter;
+    padding: .5em;
+    border: 1px solid v.$color-light;
+    border-radius: 10px;
   }
   &__base-amount {
     background-color: transparent;
     border: none;
     font-family: 'Spartan', sans-serif;
     color: v.$color-light;
-    width: 100px;
-    text-align: right;
+    width: 100%;
+    text-align: center;
     font-size: 2em;
-    margin-right: 0.5em;
+    margin-bottom: .3em;
   }
 }
