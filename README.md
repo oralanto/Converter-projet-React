@@ -1,5 +1,21 @@
-# Convertisseur
+# Currency converter
+## Currency converter with React
 
-## Objectif
+Clone the projet
+````
+git clone git@github.com:oralanto/Converter-projet-React.git
+````
 
-Réaliser un convertisseur avec React.js.
+Download the dependencies
+````
+yarn
+or
+npm install
+````
+
+Launch the project
+`````
+yarn start
+or
+npm start
+`````
